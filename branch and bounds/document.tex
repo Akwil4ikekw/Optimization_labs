@@ -1,0 +1,213 @@
+\documentclass[a4paper,12pt]{extarticle}
+\usepackage[T1, T2A]{fontenc}
+\usepackage{textcomp} %Спецсимволы
+\usepackage{graphicx} %Графика
+\usepackage{ragged2e} %Для использования {justify} - по ширине
+\usepackage[english, russian]{babel}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}  
+\usepackage{float} % Для принудительного размещения float-объектов
+
+\usepackage[a4paper, papersize={210mm, 297mm}, text={210mm, 297mm},
+left=1.5cm, top=2cm, right=1.5cm, bottom=2cm]{geometry}
+
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{code}{Verbatim}{breaklines=true}
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{code}{\linespread{1.0}\selectfont}
+\usepackage{amsmath, amssymb}
+\usepackage[font={normalfont}]{caption}
+\captionsetup[figure]{name=Рисунок, labelsep=endash}
+
+\setlength{\parskip}{0.5cm} %Отступ после абзаца
+\linespread{1.5} %Междустрочнный интервал
+
+\usepackage{enumitem}
+\setlist[enumerate]{itemindent=\parskip}
+\setlist[itemize]{itemindent=\parskip}
+
+\setlength{\parindent}{1.5cm}
+
+\titleformat{\section}
+{\normalfont\bfseries}
+{\thesection}{0.5em}{}
+
+\titleformat{\subsection}
+{\normalfont\bfseries\normalsize}
+{\thesubsection}{0.5em}{}
+
+\titlespacing{\section}{\parindent}{0pt}{0pt}
+\titlespacing{\subsection}{\parindent}{0pt}{0pt}
+
+\begin{document}
+	
+	\pagestyle{empty}
+	
+	\begin{center}
+		
+		\begin{onehalfspace}
+			
+			МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ \\
+			РОССИЙСКОЙ ФЕДЕРАЦИИ \\
+			
+			\vspace{2mm}
+			
+			ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ\\
+			УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ\\
+			«ВЯТСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ»\\
+			
+			\vspace{2mm}
+			
+			Институт математики и информационных систем\\
+			\vspace{2mm}
+			
+			Факультет автоматики и вычислительной техники \\
+			\vspace{2mm}
+			
+			Кафедра электронных вычислительных машин \\
+			
+		\end{onehalfspace}
+		
+	\end{center}
+	
+	\begin{flushright}
+		\begin{small}
+			Дата сдачи на проверку: \\
+			«\underline{\hspace{5mm}}»
+			\underline{\hspace{21mm}}
+			2025 г. \\
+			Проверка: \rule[0ex]{25mm}{0pt} \\
+			«\underline{\hspace{5mm}}»
+			\underline{\hspace{21mm}}
+			2025 г. 
+		\end{small}
+	\end{flushright}
+	
+	\begin{center}
+		
+		
+		\textbf{ЛАБОРАТОРНАЯ РАБОТА}
+		
+		Отчет по лабораторной работе №6 \\
+		по дисциплине
+		
+		Вычислительная математика и методы оптимизаций
+		
+		\vspace{20mm}
+		
+		\begin{tabular}{ll}
+			Разработал студент гр. ИВТб-2302-05-00 & \rule[0ex]{30mm}{0.1pt}~/Соловьев А.С./~ \\
+			&  \rule[0ex]{8mm}{0pt}\scriptsize{(Подпись)} \\
+			
+			Проверил старший преподаватель &\rule[0ex]{30mm}{0.1pt}~/Коржавина А.С./~ \\
+			&  \rule[0ex]{8mm}{0pt}\scriptsize{(Подпись)} \\
+			
+			Работа защищена & \hfill «\rule[0ex]{5mm}{0pt}»\rule[0ex]{24mm}{0.1pt}~2025г.~ 
+			
+		\end{tabular}
+		
+	\end{center}
+	
+	
+	\vspace{8mm}
+	\begin{center}
+		Киров 2025
+	\end{center}
+	
+	\newpage
+	
+	\pagestyle{plain}
+	\setcounter{page}{2}
+	
+
+\section*{Дано (формулировка задачи)}
+
+Рассматривается задача целочисленного линейного программирования:
+\begin{equation*}
+	\begin{aligned}
+		&\text{Требуется:} \quad && \max \; z = c_1x_1 + c_2x_2 + \ldots + c_nx_n \\
+		&\text{при условиях:} \quad &&
+		\begin{cases}
+			a_{11}x_1 + a_{12}x_2 + \ldots + a_{1n}x_n \leq b_1, \\
+			a_{21}x_1 + a_{22}x_2 + \ldots + a_{2n}x_n \leq b_2, \\
+			\quad \vdots \\
+			a_{m1}x_1 + a_{m2}x_2 + \ldots + a_{mn}x_n \leq b_m, \\
+			x_i \in \mathbb{Z}_{\geq 0}, \quad i = 1, \ldots, n.
+		\end{cases}
+	\end{aligned}
+\end{equation*}
+
+\section*{Алгоритм метода ветвей и границ}
+
+\begin{enumerate}[label=\arabic*.]
+	\item \textbf{Инициализация:}
+	\begin{itemize}
+		\item Начальная задача: \( (c, A, b) \)
+		\item Лучшая целочисленная оценка: \( z^* = -\infty \)
+		\item Лучшее решение: отсутствует
+		\item Стек задач: \( \text{stack} = \{(c, A, b)\} \)
+	\end{itemize}
+	
+	\item \textbf{Цикл по стеку задач:}
+	\begin{itemize}
+		\item Пока стек не пуст:
+		\begin{itemize}
+			\item Извлекаем текущую задачу \( (c, A, b) \)
+			\item Решаем симплекс-методом (или двойственным симплекс-методом)
+		\end{itemize}
+	\end{itemize}
+	
+	\item \textbf{Анализ решения:}
+	\begin{itemize}
+		\item Если задача не имеет допустимого решения — отбрасываем ветку
+		\item Если целевая функция не ограничена — отбрасываем ветку
+		\item Если получено целочисленное решение:
+		\begin{itemize}
+			\item Если \( z > z^* \), обновляем \( z^* \) и решение
+		\end{itemize}
+		\item Если решение содержит дробные переменные:
+		\begin{itemize}
+			\item Выбираем первую нецелую переменную \( x_k \)
+			\item Создаём две ветви:
+			\begin{itemize}
+				\item \( x_k \leq \lfloor x_k \rfloor \)
+				\item \( x_k \geq \lceil x_k \rceil \)
+			\end{itemize}
+			\item Обе задачи добавляются в стек
+		\end{itemize}
+	\end{itemize}
+	
+	\item \textbf{Окончание:}
+	\begin{itemize}
+		\item Если стек пуст:
+		\begin{itemize}
+			\item Если найдено целочисленное решение — оно оптимально
+			\item Иначе: целочисленного решения нет
+		\end{itemize}
+	\end{itemize}
+\end{enumerate}
+
+	
+	
+	
+	\begin{figure}[H] 
+		\center
+		\includegraphics [width=0.8\linewidth]{Program.png}
+		\caption{Часть работы программа в ответом}
+	\end{figure} 
+	
+	
+	
+	\begin{center}
+		\href{https://github.com/Akwil4ikekw/Optimization_labs.git}{Ссылка на репозиторий GitHub}
+	\end{center}
+	
+	
+	
+	\section{Вывод}
+	
+	В ходе данной лабораторной работы была провелена деятельность по созданию алгоритма для реализации метода ветвей и границ.
+	
+\end{document}

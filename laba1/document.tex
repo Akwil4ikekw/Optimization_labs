@@ -1,0 +1,328 @@
+\documentclass[a4paper,14pt]{extarticle}
+\usepackage[T1, T2A]{fontenc}
+\usepackage{textcomp}
+
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{xcolor}  % Для цветов в коде
+
+\lstset{
+	language=Python,
+	basicstyle=\ttfamily\footnotesize,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	numbersep=5pt,
+	backgroundcolor=\color{white},
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	frame=single,
+	rulecolor=\color{black},
+	tabsize=2,
+	captionpos=b,
+	breaklines=true,
+	breakatwhitespace=false,
+	escapeinside={\%*}{*)},
+	keywordstyle=\color{blue},
+	commentstyle=\color{green},
+	stringstyle=\color{red},
+	literate={а}{{\selectfont\char224}}1
+	{б}{{\selectfont\char225}}1
+	{в}{{\selectfont\char226}}1
+	{г}{{\selectfont\char227}}1
+	{д}{{\selectfont\char228}}1
+	{е}{{\selectfont\char229}}1
+	{ё}{{\selectfont\char184}}1
+	{ж}{{\selectfont\char230}}1
+	{з}{{\selectfont\char231}}1
+	{и}{{\selectfont\char232}}1
+	{й}{{\selectfont\char233}}1
+	{к}{{\selectfont\char234}}1
+	{л}{{\selectfont\char235}}1
+	{м}{{\selectfont\char236}}1
+	{н}{{\selectfont\char237}}1
+	{о}{{\selectfont\char238}}1
+	{п}{{\selectfont\char239}}1
+	{р}{{\selectfont\char240}}1
+	{с}{{\selectfont\char241}}1
+	{т}{{\selectfont\char242}}1
+	{у}{{\selectfont\char243}}1
+	{ф}{{\selectfont\char244}}1
+	{х}{{\selectfont\char245}}1
+	{ц}{{\selectfont\char246}}1
+	{ч}{{\selectfont\char247}}1
+	{ш}{{\selectfont\char248}}1
+	{щ}{{\selectfont\char249}}1
+	{ъ}{{\selectfont\char250}}1
+	{ы}{{\selectfont\char251}}1
+	{ь}{{\selectfont\char252}}1
+	{э}{{\selectfont\char253}}1
+	{ю}{{\selectfont\char254}}1
+	{я}{{\selectfont\char255}}1
+	{А}{{\selectfont\char192}}1
+	{Б}{{\selectfont\char193}}1
+	{В}{{\selectfont\char194}}1
+	{Г}{{\selectfont\char195}}1
+	{Д}{{\selectfont\char196}}1
+	{Е}{{\selectfont\char197}}1
+	{Ё}{{\selectfont\char168}}1
+	{Ж}{{\selectfont\char198}}1
+	{З}{{\selectfont\char199}}1
+	{И}{{\selectfont\char200}}1
+	{Й}{{\selectfont\char201}}1
+	{К}{{\selectfont\char202}}1
+	{Л}{{\selectfont\char203}}1
+	{М}{{\selectfont\char204}}1
+	{Н}{{\selectfont\char205}}1
+	{О}{{\selectfont\char206}}1
+	{П}{{\selectfont\char207}}1
+	{Р}{{\selectfont\char208}}1
+	{С}{{\selectfont\char209}}1
+	{Т}{{\selectfont\char210}}1
+	{У}{{\selectfont\char211}}1
+	{Ф}{{\selectfont\char212}}1
+	{Х}{{\selectfont\char213}}1
+	{Ц}{{\selectfont\char214}}1
+	{Ч}{{\selectfont\char215}}1
+	{Ш}{{\selectfont\char216}}1
+	{Щ}{{\selectfont\char217}}1
+	{Ъ}{{\selectfont\char218}}1
+	{Ы}{{\selectfont\char219}}1
+	{Ь}{{\selectfont\char220}}1
+	{Э}{{\selectfont\char221}}1
+	{Ю}{{\selectfont\char222}}1
+	{Я}{{\selectfont\char223}}1
+}
+
+\usepackage[normalem]{ulem} 
+\usepackage{tabularray}
+\usepackage{graphicx}
+\usepackage{diagbox} 
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{ragged2e}
+\usepackage[english, russian]{babel}
+\usepackage{setspace}
+\setlength{\parskip}{0.5cm}
+\linespread{1.5}
+\setlength{\parindent}{0.5cm}
+\usepackage[a4paper, papersize={210mm, 297mm}, text={210mm, 297mm},
+left=2cm, top=2cm, right=1.5cm, bottom=2cm]{geometry}
+\begin{document} 
+	\begin{center}
+		\normalsize{МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ
+			РОССИЙСКОЙ ФЕДЕРАЦИИ}\\
+		\normalsize{ФЕДЕРАЛЬНОЕ ГОСУДАРСТВЕННОЕ БЮДЖЕТНОЕ ОБРАЗОВАТЕЛЬНОЕ
+			УЧРЕЖДЕНИЕ ВЫСШЕГО ОБРАЗОВАНИЯ\\
+			«ВЯТСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ»}\\ 
+		\normalsize{Институт математики и информационных систем}\\
+		\normalsize{Факультет автоматики и вычислительной техники}\\
+		\normalsize{Кафедра электронных вычислительных машин}\\
+	\end{center}
+	
+	\begin{flushright}
+		\small{Дата сдачи на проверку:}\\
+		\small{«}\underline{\hspace{0.5cm}}\small{»}\underline{\hspace{2cm}} \small{2025 г.}\\
+		\small{Проверено:} \rule[0ex]{2.3cm}{0pt}\\
+		\small{«}\underline{\hspace{0.5cm}}\small{»}\underline{\hspace{2cm}}\small{2025 г.} 
+	\end{flushright}
+	\begin{center}
+		\normalsize{Вариант 18}\\
+		\normalsize{Отчет по лабораторной работе № 1 }\\ по дисциплине \\ 
+		\normalsize{«Вычислительная математика»}\\
+		
+		
+	\end{center}
+	
+	
+	\begin{flushleft}
+		\hfill \break
+		\hfill \break
+		\normalsize{ Разработал студент гр. ИВТб 2302-05-00}\rule[0ex]{0.1cm}{0pt} \underline{\hspace{4cm}}  \normalsize{/Соловьев А.С./} \\
+		\rule[0ex]{9.6cm}{0pt} \tiny{(Подпись)}\\
+		\normalsize{ Проверил заведующий кафедры ЭВМ}  \rule[0ex]{0.1cm}{0pt} \underline{\hspace{4cm}} \normalsize{/Старостин П.А./} \\ 
+		\rule[0ex]{9.6cm}{0pt} \tiny{(Подпись)}\\
+		\normalsize{ Работа защищена} \rule[0ex]{8.5cm}{0pt} \small{«}\underline{\hspace{0.5cm}}\small{»}\underline{\hspace{2.6cm}}\small{2025 г.}
+		\hfill \break
+		\hfill \break
+	\end{flushleft}
+	\begin{center} Киров 2025 \end{center}
+	\thispagestyle{empty} % выключаем отображение номера для этой страницы
+	
+	\newpage
+	
+	\section{Задание}
+	\begin{enumerate}
+		\item Построить график функции f(x) и отделить один из корней уравнения f.(x)
+		\item Сузить интервал изоляции корня, если необходимо проверить условие: $ M < 2m$
+		\item Уточнить корень с погрешностью e<= 0.00001 двумя численными методами: комбинированный методом и методом итераций.
+		\item Проверить полученное знаечние, используя систему Mathcad.
+		\item Сделать для $y = 3x -e^x =0,x \in [1,1.9]$
+	\end{enumerate}
+	
+	
+	\section{Теорическая часть.Описание методов решения уравнений}
+	\hspace{2cm}Рассмотрим исходный график. В нем функция возврастает до точки $ln(3)$. Корень находится на пересении осью OY ось OX. Пересечени находится в точке значение, которой примерно равно 1.5. Поэтому сузим график справа и слева. Теперь новый график будет на отрезке $x\in [1.4,1.6]$ 
+	\begin{figure}[H] 
+		\center
+		\includegraphics [width=0.35\linewidth]{График исходной.png}
+		\caption{График исходной функции}
+	\end{figure} 
+	
+		\begin{figure}[H] 
+		\center
+		\includegraphics [width=0.35\linewidth]{Суженный график.png}
+		\caption{График на новом интервале}
+	\end{figure} 
+	
+	
+		\hspace{2cm}В данной работе рассматриваются численные методы решения нелинейного уравнения $y = 3x-e^x$. Для нахождения корней используются следующие методы:
+	\begin{enumerate}
+		\item \textbf{Метод Ньютона (метод касательных)}
+		\begin{itemize}
+			\item Итерационная формула: \\
+			$x_{n+1} = x_{n} - \frac{f(x)}{ f\prime(x)}$
+			\item Перед применение метода нужно проверить условие $M< 2m$. \\ $M = max(\mid f\prime  \prime(x) \mid)$ \\ $m = min(\mid f\prime(x)\mid)$
+			\end{itemize}
+		
+		\item \textbf{Метод Хорд}
+		\begin{itemize}
+			\item Итерационная формула  $x_{n+1} = x_{n} - f(x_{n}) \cdot \frac{x_{n} - x_{n-1}}{f(x_{n})-f(x_{n+1})} $
+			\item Перед применение метода нужно проверить условие $M< 2m$. \\ $M = max(\mid f\prime  \prime  (x)\mid)$ \\ $m = min(\mid f\prime(x)\mid)$
+			
+			\item Для работы данного метода нужно чтобы ни одна точка не бьла ни критической, ни стационарной. То есть $f\prime(x)\neq 0$ и $f\prime\prime(x)\neq0$.
+			\end{itemize}
+			\item \textbf{Метод простых итераций}
+			\begin{itemize}
+			\item приведение уравнения к эквивалентной форме $x_{n+1} =\varphi(x_{n})$
+			\item Метод требует выбора $\varphi(x)$ удовлетворяющего условия сходимости 
+			\end{itemize}
+	\item \textbf{Комбинированный метод}
+	Комбинационный метод состоит из следущих этапов:
+	\begin{itemize}
+		\item Проверка условия $M< 2m$
+		\item Итерация метода Хорд
+		\item Итерация метода Ньютона 
+		\item Алгоритм повторяет, пока корень не будет вычислен с нужной погрешностью
+		\end{itemize}
+		\end{enumerate}
+		{\textbf{\large Ограничения методов}}
+			\begin{itemize}
+		\item	Метод Ньютона может не сойтись при плохом выборе начального приближения.
+		
+		\item Метод хорд требует выбора двух начальных приближений и проверки на стационарные и критические точки.
+			
+		\item Метод простых итераций требует правильного выбора итерационной функции.
+		\end{itemize}
+	\section{Практическая часть}
+	
+	\textbf{\large Анализ условий для работы методов}
+	\textbf{Комбинированный метод}
+	\begin{enumerate}
+	\item \textbf{Метод хорд}\\
+	Для работы метода хорд нужно, чтобы ни одна точка на отрезке $x\in[1.4,1.6]$ не была стационарной или критической и должно соблюдаться условие $M< 2m$. При $x\in [1.4,1.6]$.  \\
+		Теперь проверим условие $M< 2m$ на новом отрезке.
+	\\ $m = min(|f\prime(x)|)$
+	\\$M = max(|f\prime\prime(x)|)$
+	
+	
+	При $x_0 = 1.5$ и $x_1=1.55$
+\\ В данном случае $m =\approx 1.4816890703380645$, а  $M \approx 4.71147018259074$. Отсюда следует, что условие \\  $ 4.71147018259074<=2.963378140676129  $ не выполнено. Поэтому будем использовать дуругю формулу для уточнения приближения к корню, о ней будет написано дальше.
+\\
+	Проверим другие условия:  \\$f\prime(x)\neq0$ и $f\prime\prime(x)\neq0$
+	
+		$f\prime(x) = (3- e^x)$\\
+		$(3 - e^x)\neq0$   \\
+		$e^x \neq 3$ \Rightarrow  $x \neq \ln{3}$\\
+		$ln{3}\approx 1,0986$\\
+		$1.4>ln(3)$, значит данное условие выполняется на заданном отрезке $x\in[1.4,1.6]$
+		Проверим второе условие $f\prime\prime(x)\neq0$
+		\\ $f\prime\prime(x)=e^x$\\
+		Отсюда следует, что  данное условие $x\neq0$  у нас соблюдено.
+		\\
+		Значит, все условия для работы метода хорд соблюдены.
+		
+		
+		
+		
+		\newpage
+		\item \textbf{Метод Ньютона (метод касательных)}\\
+		Как я упоминал выше, чтобы работал метод Ньютона должно соблюдаться условие $M< 2m$. Проверим данное условие.
+		
+		\\ $m = min(|f\prime(x)|)$
+		\\$M = max(|f\prime\prime(x)|)$
+		При $x_0 = 1.5$ и $x_1=1.55$
+		\\ В данном случае $m =\approx 1.4816890703380645$, а  $M \approx 4.71147018259074$. Отсюда следует, что условие \\  $ 4.71147018259074<=2.963378140676129  $ не выполнено, даже при очень большом приближении. Так как функция монотонно возврастающая и это экспонента. У нее не может быть такого прироста, чтобы условие выполнялось. Поэтому будем использовать другую формулу для слежения
+		за точностью приближения к корню по общей более сложной
+		формуле:\\
+		$ |\varepsilon -x_n |<=\frac{f(x_n)}{min(f\prime (x))}\)$
+		\\В данном случае $|\varepsilon -x_n |$ - это погрешность с которой нужно посчитать, поэтому можем заменить $|\varepsilon -x_n |$ на  $\varepsilon$ , которое дано было по заданию (10^{-5}).
+			\begin{figure}[H] 
+			\center
+			\includegraphics [width=0.5\linewidth]{Условие сходимости.png}
+			\caption{Проверка условия сходимости}
+		\end{figure} 
+		
+			\begin{figure}[H] 
+			\center
+			\includegraphics [width=0.5\linewidth]{КомбинированныйПервыеИтерации.png}
+			\caption{График функции применения комбинационного метода} 
+		\end{figure} 
+		
+		\end{enumerate}
+		Метод Хорд будет применяться слевой стороны,то есть точка справа будет неподвижной. Метод Ньютона будет применяться с правой стороны, он будет двигаться к корню.\\
+		Комбинированный метод будет повторяться пока выполнимо условие\\ $ 10^{-5}<=\frac{f(x_n)}{min(f\prime (x))}\)$.
+	\newpage
+		\item \textbf{\large Итерационный метод}
+	\\Для работы данного метода функция эквивалентная $\varphi(x)$ должна быть непрерывна на отрезке. 
+	\\Эквивалентной функцией для $y=3x-e^x$ будет $\varphi(x) = \ln(3x)$. Функция $\varphi(x)$ сходится во всех случаях, кроме $x = 0 $, но данное значение не пренадлежит нашему промежутку, значит наш отрезок $x\in[1.4,1.6]$ удовлетворяет условию сходимости.
+	\\ Условие прекращения итерирования: $|x1 - x0| < 10^{-5}$. Где $x1$ - граница спарва от корня, $x0$ - граница слева от корня.
+		\begin{figure}[H] 
+		\center
+		\includegraphics [width=0.5\linewidth]{График с корнями.png}
+		\caption{График с корнями}
+	\end{figure} 
+		\textbf{Листинг программы: }
+	\lstinputlisting[language=Python, caption={Python код программы}]{main.py}
+	
+	\newpage
+	\textbf{\large Итерации методов}\\
+		\begin{figure}[H] 
+		\center
+		\includegraphics [width=0.5\linewidth]{Комбинированный метод.png}
+		\caption{Итерации комбинированного метода}
+			\end{figure} 
+		\\
+	Для вычисления корня с нужной точностью было сделано 2 итерации. Корень отмечен на Рис.4 красной горизонтальной пунктирной линией.
+	
+	\begin{figure}[H] 
+		\center
+		\includegraphics [width=0.35\linewidth]{Итерации.png}
+		\caption{Итерации метода простых итераций}
+	\end{figure} 
+	
+	Для того, чтобы достить корня с нужно погрешностью понадобилось 26 итераций.
+	Корень отмечен на Рис.4 зеленой горизонтальной пунктирной линией.
+\newpage
+\section{Проверка в вычислений в Maxima}
+Сделаем проверку значения корня в Maxima
+\begin{figure}[H] 
+	\center
+	\includegraphics [width=0.35\linewidth]{Maxima1.png}
+	\caption{График функции}
+\end{figure} 
+
+\begin{figure}[H] 
+	\center
+	\includegraphics [width=0.35\linewidth]{Maxima2.png}
+	\caption{Вычисления в maxima}
+\end{figure} 
+Значение корня вычесленное с помощью Maxima получилось 1.51213$\pm$0.00001 , что примерно равно вычислениям в программе python, в ней корень равен 1.51212$\pm$0.00001 методом итераций, а методом Ньютона корень равен 1.51213$\pm$0.00001. 
+\newpage
+	\section{Вывод}
+	В ходе данной лабораторной работы, я смог ознакомлся с 3 методами решения нелинейных уравнений. А именно: метод Ньютона, метод хорд, метод простых итераций. Эти методы были реализованы в программес использованием высокого языка программирования (Python). Также вычесленные корни были проверены в Maxima, они сошлись с минимальной погрешностью.
+\end{document}
+
+
